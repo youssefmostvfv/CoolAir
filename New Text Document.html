@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>معرض بطاقات بسيط</title>
+    <style>
+        /* إعادة تعيين بعض الأنماط الأساسية */
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            margin: 0;
+            background-color: #f8f9fa;
+            color: #212529;
+        }
+
+        /* حاوية رئيسية لتوسيط المحتوى */
+        .container {
+            max-width: 1140px;
+            margin: 0 auto; /* للتوسيط */
+            padding: 40px 15px;
+        }
+
+        h1 {
+            font-size: 2.5rem; /* حجم خط كبير للعنوان */
+            margin-bottom: 8px;
+        }
+
+        .lead {
+            font-size: 1.25rem; /* حجم خط للفقرة التمهيدية */
+            font-weight: 300;
+            margin-bottom: 16px;
+        }
+
+        hr {
+            margin: 40px 0;
+            border: 0;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        /* هذا هو الجزء الذي يحاكي تأثير Masonry */
+        .card-gallery {
+            column-count: 3; /* عدد الأعمدة في الشاشات الكبيرة */
+            column-gap: 24px; /* المسافة بين الأعمدة */
+        }
+
+        /* تصميم البطاقة */
+        .card {
+            background-color: #ffffff;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            margin-bottom: 24px; /* المسافة السفلية بين البطاقات في نفس العمود */
+            padding: 24px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            display: inline-block; /* ضروري لعمل الأعمدة بشكل صحيح */
+            width: 100%; /* لجعل البطاقة تملأ العمود */
+            box-sizing: border-box; /* لتضمين الحشو والإطار في العرض الكلي */
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            margin-top: 0;
+            margin-bottom: 12px;
+        }
+
+        .card-text {
+            margin-top: 0;
+            margin-bottom: 16px;
+        }
+
+        .quote {
+            margin: 0;
+            font-style: italic;
+        }
+
+        .quote-footer {
+            margin-top: 8px;
+            color: #6c757d; /* لون رمادي للنص الثانوي */
+            font-size: 0.9em;
+        }
+
+        /* لجعل التصميم متجاوباً مع الشاشات المختلفة */
+        @media (max-width: 992px) {
+            .card-gallery {
+                column-count: 2; /* عمودان في الشاشات المتوسطة */
+            }
+        }
+
+        @media (max-width: 576px) {
+            .card-gallery {
+                column-count: 1; /* عمود واحد في الشاشات الصغيرة */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <main class="container">
+
+        <div class="card-gallery">
+            <!-- البطاقة 1 -->
+            <div class="card">
+                <h5 class="card-title">عنوان البطاقة الأولى</h5>
+                <p class="card-text">هذه بطاقة أطول قليلاً تحتوي على نص داعم كمقدمة طبيعية لمحتوى إضافي. هذا المحتوى أطول قليلاً.</p>
+            </div>
+
+            <!-- البطاقة 2 -->
+            <div class="card">
+                <blockquote class="quote">
+                    <p>"اقتباس مشهور موجود داخل عنصر blockquote."</p>
+                </blockquote>
+                <figcaption class="quote-footer">
+                    شخص مشهور في <cite>عنوان المصدر</cite>
+                </figcaption>
+            </div>
+
+            <!-- البطاقة 3 -->
+            <div class="card">
+                <h5 class="card-title">عنوان البطاقة</h5>
+                <p class="card-text">تحتوي هذه البطاقة على نص داعم أدناه كمقدمة طبيعية لمحتوى إضافي.</p>
+            </div>
+
+            <!-- البطاقة 4 -->
+            <div class="card">
+                <h5 class="card-title">بطاقة في المنتصف</h5>
+                <p class="card-text">هذه البطاقة لها عنوان عادي وفقرة قصيرة من النص تحتها.</p>
+            </div>
+
+            <!-- البطاقة 5 -->
+            <div class="card">
+                <blockquote class="quote">
+                    <p>"اقتباس آخر مشهور."</p>
+                </blockquote>
+                <figcaption class="quote-footer">
+                    شخص مشهور في <cite>عنوان المصدر</cite>
+                </figcaption>
+            </div>
+
+            <!-- البطاقة 6 -->
+            <div class="card">
+                <h5 class="card-title">عنوان بطاقة آخر</h5>
+                <p class="card-text">هذه بطاقة أخرى بها عنوان ونص داعم أدناه. تحتوي هذه البطاقة على بعض المحتوى الإضافي لجعلها أطول قليلاً بشكل عام.</p>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>
